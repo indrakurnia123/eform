@@ -1,41 +1,51 @@
-<div>
-    <div class="container" style="margin-top: 120px">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card border-0 rounded shadow">
-                    <div class="card-body">
-                        <h5 class="text-center"> <i class="fa fa-user-circle"></i> LOGIN</h5>
-                        <hr>
-                        <form wire:submit.prevent="login">
-
-                            <div class="form-group">
-                                <label class="font-weight-bold">ALAMAT EMAIL</label>
-                                <input type="text" wire:model.lazy="email"
-                                    class="form-control @error('email') is-invalid @enderror"
-                                    placeholder="Alamat Email">
-                                @error('email')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <label class="font-weight-bold">PASSWORD</label>
-                                <input type="password" wire:model.lazy="password"
-                                    class="form-control @error('password') is-invalid @enderror" placeholder="Password">
-                                @error('password')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-block">LOGIN</button>
-                        </form>
-                    </div>
-                </div>
+<div id="app">
+    <section class="section">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+            <div class="login-brand">
+              <img src="{{asset('stisla/img/stisla-fill.svg')}}" alt="logo" width="100" class="shadow-light rounded-circle">
             </div>
+
+            <div class="card card-primary">
+              <div class="card-header"><h4>Login</h4></div>
+
+              <div class="card-body">
+                <form wire:submit.prevent="login">
+
+                    <div class="form-group">
+                        <label class="font-weight-bold">Email</label>
+                        <input type="text" wire:model.lazy="email"
+                            class="form-control @error('email') is-invalid @enderror"
+                            placeholder="Alamat Email">
+                        @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-weight-bold">Password</label>
+                        <input type="password" wire:model.lazy="password"
+                            class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+                        @error('password')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                      Login
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
+  </div>

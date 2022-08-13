@@ -1,3 +1,4 @@
+@section('title','eForm | Dashboard')
 <div>
     <div class="container-fluid" style="margin-top: 50px">
         <div class="row">
