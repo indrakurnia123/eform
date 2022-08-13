@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\Auth\Register;
+use App\Http\Livewire\Auth\Login;
+use App\Http\Livewire\Auth\Dashboard;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['middleware'=>'guest'], function(){
+    Route::get('/register',Register::class)->name('auth.register');
+    Route::get('/login',Login::class)->name('login');
+});
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/dashboard',Dashboard::class)->name('dashboard');
 });
