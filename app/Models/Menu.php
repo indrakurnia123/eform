@@ -16,4 +16,14 @@ class Menu extends Model
         'parent_id',
         'is_active',
     ];
+
+    public function roleMenu()
+    {
+        return $this->hasMany(RoleMenu::class);
+    }
+
+    public function groupMenu()
+    {
+        return $this->hasMany(GroupMenu::class);
+    }
 }

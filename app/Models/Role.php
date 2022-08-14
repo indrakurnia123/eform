@@ -15,12 +15,12 @@ class Role extends Model
         'updated_at'
     ];
 
-    public function user()
+    public function users()
     {
-        $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
     public function roleMenu()
     {
-        $this->hasMany(RoleMenu::class);
+        return $this->hasMany(RoleMenu::class);
     }
 }

@@ -18,6 +18,6 @@ class Office extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 }

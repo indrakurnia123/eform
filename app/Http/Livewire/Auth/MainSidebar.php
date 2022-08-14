@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Auth;
 
+use Auth;
 use Livewire\Component;
+use App\Models\User;
 use App\Models\Menu;
 
 class MainSidebar extends Component
@@ -15,6 +17,10 @@ class MainSidebar extends Component
     {
         $this->appName = config('app.name');
         $this->appShortName = config('app.shortname');
+
+        // $user = User::find(Auth::user()->id);
+        $user = User::find(1);
+        dd($user->role);
         $this->menu = $menu;
     }
 
