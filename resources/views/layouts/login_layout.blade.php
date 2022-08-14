@@ -29,15 +29,8 @@
     @stack('page_specific_js_head')
 </head>
 <body>
-    <div id="app">
-        <div class="main-wrapper">
-            @yield('navbar')
 
-            @yield('main-sidebar')
-
-            @yield('main-content')
-        </div>
-    </div>
+    @yield('content')
 
     <script>
         @if(session()->has('success'))
