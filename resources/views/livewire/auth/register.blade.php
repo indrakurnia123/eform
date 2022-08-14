@@ -7,7 +7,6 @@
                         <h5 class="text-center"> <i class="fa fa-user-plus"></i> REGISTER</h5>
                         <hr>
                         <form>
-
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">

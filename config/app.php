@@ -15,6 +15,10 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    // shortname adalah Config Tambahan untuk shortname di sidebar saat sidebar di perkecil
+
+    'shortname' => env('APP_SHORTNAME', 'Laravel'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

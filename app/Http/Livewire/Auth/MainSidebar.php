@@ -7,11 +7,13 @@ use Livewire\Component;
 class MainSidebar extends Component
 {
     public $appName;
+    public $appShortName;
     public $menu;
 
     public function mount($menu=null)
     {
         $this->appName = config('app.name');
+        $this->appShortName = config('app.shortname');
         $this->menu = $menu;
     }
 
