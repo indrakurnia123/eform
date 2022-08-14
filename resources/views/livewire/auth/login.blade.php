@@ -6,7 +6,6 @@
             <div class="login-brand">
               <img src="{{asset('stisla/img/stisla-fill.svg')}}" alt="logo" width="100" class="shadow-light rounded-circle">
             </div>
-
             <div class="card card-primary">
               <div class="card-header"><h4>Login</h4></div>
 

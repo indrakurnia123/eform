@@ -22,7 +22,7 @@ class Login extends Component
             return redirect()->route('dashboard');
         }else{
             session()->flash('error','Email atau Passsword Salah');
-            return redirect()->route('auth.login');
+            return redirect()->route('login');
         }
 
     }

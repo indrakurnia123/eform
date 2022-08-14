@@ -19,11 +19,19 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{asset('stisla/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('stisla/css/components.css')}}">
+
+    <!-- page_specific_css -->
+    @stack('page_specific_css')
+    
+    <!-- page specific js head -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    @stack('page_specific_js_head')
 </head>
 <body>
     
     @yield('content')
-    
+
     <script>
         @if(session()->has('success'))
             toastr.success('{{ session('success') }}')
