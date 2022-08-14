@@ -14,10 +14,10 @@ class AddParentIdToMenusTable extends Migration
     public function up()
     {
         Schema::table('menus', function (Blueprint $table) {
-            $table->string('path')->after('name');
-            $table->string('icon')->after('path');
-            $table->integer('parent_id');
-            $table->integer('is_active');
+            $table->string('path')->after('name')->nullable();
+            $table->string('icon')->after('path')->nullable();
+            $table->integer('parent_id')->nullable();
+            $table->integer('is_active')->default(1);
         });
     }
 

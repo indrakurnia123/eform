@@ -12,4 +12,14 @@ class RoleMenu extends Model
         'role_id',
         'menu_id'
     ];
+
+    public function role()
+    {
+        $this->hasMany(Role::class);
+    }
+
+    public function menu()
+    {
+        $this->hasMany(Menu::class);
+    }
 }
