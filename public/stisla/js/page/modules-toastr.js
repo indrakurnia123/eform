@@ -8,10 +8,10 @@ $("#toastr-1").click(function() {
   });
 });
 
-$("#toastr-2").click(function() {
+$("#toastr-2").click(function(messages) {
   iziToast.success({
     title: 'Hello, world!',
-    message: 'This awesome plugin is made by iziToast',
+    message: messages,
     position: 'topRight'
   });
 });

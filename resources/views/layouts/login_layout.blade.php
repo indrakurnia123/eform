@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('stisla/modules/summernote/dist/summernote-bs4.css')}}">
     <link rel="stylesheet" href="{{asset('stisla/modules/owl.carousel/dist/assets/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('stisla/modules/owl.carousel/dist/assets/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('stisla/modules/izitoast/dist/css/iziToast.min.css')}}">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{asset('stisla/css/style.css')}}">
@@ -25,7 +26,6 @@
     @stack('page_specific_css')
     
     <!-- page specific js head -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     @stack('page_specific_js_head')
 </head>
@@ -33,13 +33,6 @@
 
     @yield('content')
 
-    <script>
-        @if(session()->has('success'))
-            toastr.success("{{ session('success') }}")
-        @elseif(session()->has('error'))
-            toastr.error("{{ session('error') }}")
-        @endif
-    </script>
     <!-- General JS Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -54,6 +47,7 @@
     <script src="{{asset('stisla/modules/owl.carousel/dist/owl.carousel.min.js')}}"></script>
     <script src="{{asset('stisla/modules/summernote/dist/summernote-bs4.js')}}"></script>
     <script src="{{asset('stisla/modules/chocolat/dist/js/jquery.chocolat.min.js')}}"></script>
+    <script src="{{asset('stisla/modules/izitoast/dist/js/iziToast.min.js')}}"></script>
 
     <!-- Template JS File -->
     <script src="{{asset('stisla/js/scripts.js')}}"></script>
@@ -61,6 +55,12 @@
 
     <!-- Page Specific JS File -->
     @stack('page_specific_js')
+    <script>
+        @if(session()->has('success'))
+            iziToast.success({title:'Success',message:"{{ session('success') }}"});
+        @elseif(session()->has('error'))
+            iziToast.error({title:'Error',message:"{{ session('error') }}"});
+        @endif
+    </script>
 
-    <!-- <script src="{{asset('stisla/js/page/index.js')}}"></script> -->
 </body>
