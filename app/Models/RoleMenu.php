@@ -16,11 +16,11 @@ class RoleMenu extends Model
     
     public function role()
     {
-        return $this->hasMany(Role::class);
+        return $this->belongsTo(Role::class);
     }
 
     public function menu()
     {
-        return $this->hasMany(Menu::class);
+        return $this->belongsTo(Menu::class);
     }
 }

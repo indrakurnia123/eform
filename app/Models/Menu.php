@@ -24,6 +24,6 @@ class Menu extends Model
 
     public function groupMenu()
     {
-        return $this->hasMany(GroupMenu::class);
+        return $this->belongsTo(GroupMenu::class);
     }
 }

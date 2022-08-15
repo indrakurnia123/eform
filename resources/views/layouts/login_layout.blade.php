@@ -35,9 +35,9 @@
 
     <script>
         @if(session()->has('success'))
-            toastr.success('{{ session('success') }}')
+            toastr.success("{{ session('success') }}")
         @elseif(session()->has('error'))
-            toastr.error('{{ session('error') }}')
+            toastr.error("{{ session('error') }}")
         @endif
     </script>
     <!-- General JS Scripts -->

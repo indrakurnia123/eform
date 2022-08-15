@@ -31,19 +31,26 @@
 <body>
     <div id="app">
         <div class="main-wrapper">
-            @yield('navbar')
+            <livewire:auth.navbar/>
 
-            @yield('main-sidebar')
+            <livewire:auth.main-sidebar/>
 
-            @yield('main-content')
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-header">
+                        <h1>@yield('section-header')</h1>
+                    </div>
+                    @yield('content')
+                </section>
+            </div>
         </div>
     </div>
 
     <script>
         @if(session()->has('success'))
-            toastr.success('{{ session('success') }}')
+            toastr.success("{{ session('success') }}")
         @elseif(session()->has('error'))
-            toastr.error('{{ session('error') }}')
+            toastr.error("{{ session('error') }}")
         @endif
     </script>
     <!-- General JS Scripts -->

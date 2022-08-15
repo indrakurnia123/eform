@@ -20,10 +20,10 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware'=>'guest'], function(){
-    Route::get('/register',Register::class)->name('auth.register');
     Route::get('/login',Login::class)->name('login');
 });
 
 Route::group(['middleware'=>'auth'],function(){
+    Route::get('/register',Register::class)->name('auth.register');
     Route::get('/dashboard',Dashboard::class)->name('dashboard');
 });
