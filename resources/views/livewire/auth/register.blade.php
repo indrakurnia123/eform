@@ -37,6 +37,22 @@
                         </div>
                         @enderror
                     </div>
+                    <div class="form-group col-6">
+                        <label>Nomor Whatsapp (62xxxxxx)</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            </div>
+                            <input type="text" wire:model.lazy="phone" class="form-control phone-number @error('phone') is-invalid @enderror" placeholder="No Whatsapp (62xxxxxx)">
+                        </div>
+                        @error('phone')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
                 </div>
 
                 <div class="row">

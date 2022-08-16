@@ -12,6 +12,7 @@ class Register extends Component
     public $username;
     public $name;
     public $email;
+    public $phone;
     public $default_password;
     public $role_id;
     public $office_id;
@@ -39,6 +40,7 @@ class Register extends Component
             'username' => 'required',
             'name' => 'required',
             'email' => 'required|email|unique:users',
+            'phone'=>'required',
             'role_id'=>'required',
             'office_id'=>'required'
         ]);
@@ -47,6 +49,7 @@ class Register extends Component
             'username'=>$this->username,
             'name'=>$this->name,
             'email'=>$this->email,
+            'phone'=>$this->phone,
             'password'=>bcrypt($this->default_password),
             'image'=>$this->image,
             'role_id'=>$this->role_id,

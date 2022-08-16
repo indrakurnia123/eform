@@ -22,34 +22,22 @@
             <div class="table-responsive">
                 <table class="table table-striped">
                 <tr>
-                    <th>
-                    <div class="custom-checkbox custom-control">
-                        <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad" class="custom-control-input" id="checkbox-all">
-                        <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
-                    </div>
-                    </th>
-                    <th>Username</th>
+                    <th>Image</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Image</th>
+                    <th>Office</th>
                     <th>Role</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
                 @foreach($users as $user)
                     <tr>
-                        <td class="p-0 text-center">
-                            <div class="custom-checkbox custom-control">
-                                <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox-1">
-                                <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
-                            </div>
-                        </td>
-                        <td>{{$user->username}}</td>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->email}}</td>
                         <td>
                             <img alt="image" src="{{$user->image}}" class="rounded-circle" width="35" data-toggle="tooltip" title="{{$user->name}}">
                         </td>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->office->name}}</td>
                         <td>{{$user->role->description}}</td>
                         @if($user->is_active==1)
                             <td><div class="badge badge-success">Aktif</div></td>
