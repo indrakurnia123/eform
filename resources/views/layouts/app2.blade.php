@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('stisla/modules/owl.carousel/dist/assets/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('stisla/modules/owl.carousel/dist/assets/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('stisla/modules/izitoast/dist/css/iziToast.min.css')}}">
+    @stack('css_libraries')
 
 
     <!-- Template CSS -->
@@ -70,6 +71,7 @@
     <script src="{{asset('stisla/modules/chocolat/dist/js/jquery.chocolat.min.js')}}"></script>
     <script src="{{asset('stisla/modules/jquery-ui-dist/jquery-ui.min.js')}}"></script>
     <script src="{{asset('stisla/modules/izitoast/dist/js/iziToast.min.js')}}"></script>
+    @stack('js_libraries')
 
 
     <!-- Template JS File -->

@@ -29,6 +29,7 @@ class Request extends Component
     public $postcode;
     public $request_date;
     public $office_id;
+    public $request_status_id;
 
     public $provinces;
     public $cities;
@@ -39,6 +40,7 @@ class Request extends Component
     {
         $this->request_date = date('Y-m-d');
         $this->office_id = Auth::user()->office->id;
+        $this->request_status_id = 1;
 
         // $this->provinces=Province::all();
     }
@@ -49,7 +51,7 @@ class Request extends Component
         $this->validate([
             'request_number'=>'required|unique:requests',
             'nik'=>['required','min:16'],
-            'npwp'=>['required','min:16',new NpwpRule()],
+            // 'npwp'=>['required','min:16',new NpwpRule()],
             'name'=>'required',
             'birth_place'=>'required',
             'birth_date'=>'required',
@@ -78,25 +80,17 @@ class Request extends Component
             // 'subdistrict_id'=>$this->subdistrict_id,
             // 'postcode'=>$this->postcode,
             'request_date'=>$this->request_date,
-            'office_id'=>$this->office_id
+            'office_id'=>$this->office_id,
+            'request_status_id'=>$this->request_status_id,
         ]);
 
         if($req){
             session()->flash('success','Registrasi Berhasil!');
-            return redirect()->route('auth.request');
+            return redirect()->route('auth.request.add');
         }else{
             session()->flash('error','Request Gagal!');
             return redirect()->back()->withInput(Input::all());
         }
-
-        // if($req){
-        //     session()->flash('success','Request Berhasil!');
-        //     return redirect()->back();            
-        // }else{
-        //     session()->flash('error','Request Gagal!');
-        //     return redirect()->back()->withInput(Input::all());
-        // }
-
     }
 
     public function render()

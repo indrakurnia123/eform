@@ -95,7 +95,7 @@
                     <div class="row">
                         <div class="form-group col-6">
                             <label class="font-weight-bold">No. KTP (NIK)</label>
-                            <input type="text" wire:model.lazy="nik" class="form-control @error('nik') is-invalid @enderror" placeholder="No. KTP (NIK)">
+                            <input type="text" wire:model.lazy="nik" class="form-control @error('nik') is-invalid @enderror" placeholder="No. KTP (NIK)" maxlength="16">
                             @error('nik')
                             <div class="invalid-feedback">
                                 {{ $message }}

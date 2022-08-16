@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Request;
 
-class Request extends Model
+class RequestStatus extends Model
 {
     use HasFactory;
-    public $guarded=['id'];
+    protected $guarded=['id'];
 
-    public function request_status()
+    public function request()
     {
-        return $this->belongsTo(RequestStatus::class);
+        return $this->hasMany(Request::class);
     }
 }
