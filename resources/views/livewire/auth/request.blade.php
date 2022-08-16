@@ -65,7 +65,7 @@
                 <div class="card-body">
                     <p class="text-muted">Pastikan anda masukan sudah sesuai KTP sebelum proses verifikasi oleh sistem</p>
                     <div class="row">
-                        <div class="form-group col-6">
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12 col-lg-6">
                             <label class="font-weight-bold">No. Permohonan</label>
                             <input type="text" wire:model.lazy="request_number" class="form-control @error('request_number') is-invalid @enderror" placeholder="No. Permohonan">
                             @error('request_number')
@@ -75,7 +75,7 @@
                             @enderror
                         </div>
                         
-                        <div class="form-group col-6">
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12 col-lg-6">
                             <label>Nomor Hp</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-6">
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12 col-lg-6">
                             <label class="font-weight-bold">No. KTP (NIK)</label>
                             <input type="text" wire:model.lazy="nik" class="form-control @error('nik') is-invalid @enderror" placeholder="No. KTP (NIK)" maxlength="16">
                             @error('nik')
@@ -103,7 +103,7 @@
                             @enderror
                         </div>
                         
-                        <div class="form-group col-6">
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12 col-lg-6">
                             <label class="font-weight-bold">No. NPWP (Jika ada)</label>
                             <input type="text" wire:model.lazy="npwp" class="form-control @error('npwp') is-invalid @enderror" placeholder="No. NPWP">
                             @error('npwp')
@@ -140,7 +140,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="form-group col-6">
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12 col-lg-6">
                             <label class="font-weight-bold">Tempat Lahir</label>
                             <input type="text" wire:model.lazy="birth_place" class="form-control @error('birth_place') is-invalid @enderror" placeholder="Tempat Lahir">
                             @error('birth_place')
@@ -149,7 +149,7 @@
                             </div>
                             @enderror
                         </div>
-                        <div class="form-group col-6">
+                        <div class="form-group col-md-6 col-sm-12 col-xs-12 col-lg-6">
                             <label class="font-weight-bold">Tanggal Lahir</label>
                             <input type="date" wire:model.lazy="birth_date" class="form-control @error('birth_date') is-invalid @enderror" placeholder="Tanggal Lahir">
                             @error('birth_date')
