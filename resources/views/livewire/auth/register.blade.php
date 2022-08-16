@@ -1,7 +1,6 @@
 @section('title','eform| Register')
 <div>
     @section('section-header','Register')
-
     <div class="card card-primary">
         <div class="card-header"><h4>Masukan data user</h4></div>
 

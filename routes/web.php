@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Auth\Register;
+use App\Http\Livewire\Auth\Request;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Dashboard;
 use App\Http\Livewire\Auth\ListUsers;
@@ -26,6 +27,7 @@ Route::group(['middleware'=>'guest'], function(){
 
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/register',Register::class)->name('auth.register');
+    Route::get('/request',Request::class)->name('auth.request');
     Route::get('/dashboard',Dashboard::class)->name('dashboard');
     Route::get('/users',ListUsers::class)->name('auth.users');
 });
