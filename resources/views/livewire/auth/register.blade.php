@@ -83,7 +83,7 @@
                             </div>
                             @enderror
                     </div>
-                </div>  
+                </div>   
                 <div class="row justify-content-right">
                     <div class="form-group col-md-2 col-lg-2 col-sm-6 col-xs-12">
                         <button type="submit" class="btn btn-primary btn-lg btn-block">

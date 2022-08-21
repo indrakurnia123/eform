@@ -7,6 +7,7 @@ use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Dashboard;
 use App\Http\Livewire\Auth\ListUsers;
 use App\Http\Livewire\Auth\ListRequest;
+use App\Http\Livewire\Auth\RequestDetail;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,5 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/requests',ListRequest::class)->name('auth.requests');
     Route::get('/dashboard',Dashboard::class)->name('dashboard');
     Route::get('/users',ListUsers::class)->name('auth.users');
+    Route::get('/request/detail/{id}',RequestDetail::class)->name('auth.request.detail');
 });

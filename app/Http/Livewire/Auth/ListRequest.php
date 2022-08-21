@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Auth;
 
 use Livewire\Component;
 use App\Models\Request as Req;
+use Illuminate\Support\Facades\Http;
 use Auth;
 
 class ListRequest extends Component

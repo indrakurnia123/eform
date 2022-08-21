@@ -34,6 +34,7 @@ class Register extends Component
         
         // dd($offices);
     }
+
     public function store()
     {
         $this->validate([
@@ -42,9 +43,10 @@ class Register extends Component
             'email' => 'required|email|unique:users',
             'phone'=>'required',
             'role_id'=>'required',
-            'office_id'=>'required'
+            'office_id'=>'required',
         ]);
 
+        $foto= $request->
         $user = User::create([
             'username'=>$this->username,
             'name'=>$this->name,
