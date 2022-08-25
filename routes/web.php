@@ -8,6 +8,7 @@ use App\Http\Livewire\Auth\Dashboard;
 use App\Http\Livewire\Auth\ListUsers;
 use App\Http\Livewire\Auth\ListRequest;
 use App\Http\Livewire\Auth\RequestDetail;
+use App\Http\Livewire\Auth\Request\DataCij;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +30,10 @@ Route::group(['middleware'=>'guest'], function(){
 });
 
 Route::group(['middleware'=>'auth'],function(){
-    Route::get('/register',Register::class)->name('auth.register');
-    Route::get('/request/add',Request::class)->name('auth.request.add');
-    Route::get('/requests',ListRequest::class)->name('auth.requests');
     Route::get('/dashboard',Dashboard::class)->name('dashboard');
     Route::get('/users',ListUsers::class)->name('auth.users');
-    Route::get('/request/detail/{id}',RequestDetail::class)->name('auth.request.detail');
+    Route::get('/register',Register::class)->name('auth.register');
+    Route::get('/requests',App\Http\Livewire\Auth\Request\Index::class)->name('requests.index');
+    Route::get('/request/create',App\Http\Livewire\Auth\Request\Create::class)->name('requests.create');
+    Route::get('/request/detail/{id}',RequestDetail::class)->name('requests.detail');
 });
