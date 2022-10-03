@@ -37,13 +37,41 @@ return [
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
-                'useTLS' => true,
+                'enabledTransports'=> ['ws', 'xhr_streaming'],
+                'useTLS' => false,
+                'curl_options'=>[
+                    'CURLOPT_SSL_VERIFYPEER'=>false
+                ]
             ],
         ],
 
+        // 'pusher' => [
+        //     'driver' => 'pusher',
+        //     'key' => env('PUSHER_APP_KEY'),
+        //     'secret' => env('PUSHER_APP_SECRET'),
+        //     'app_id' => env('PUSHER_APP_ID'),
+        //     'options' => [
+        //         'cluster' => env('PUSHER_APP_CLUSTER'),
+        //         // 'encrypted' => true,
+        //         'host' => '127.0.0.1',
+        //         'port' => 6001,
+        //         'scheme' => 'http'
+        //     ],
+        // ],
+
         'ably' => [
-            'driver' => 'ably',
-            'key' => env('ABLY_KEY'),
+            'driver' => 'pusher',
+            'key' => env('ABLY_APP_KEY'),
+            'secret' => env('ABLY_APP_SECRET'),
+            'app_id' => env('ABLY_APP_ID'),
+            'options' => [
+                'host' => env('ABLY_APP_HOST'),
+                'useTLS' => false,
+                'encrypted' => false,
+                'curl_options'=>[
+                    'CURLOPT_SSL_VERIFYPEER'=>false
+                ]
+            ],
         ],
 
         'redis' => [

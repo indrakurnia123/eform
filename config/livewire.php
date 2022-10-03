@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'layout' => 'layouts.app',
+    'layout' => 'layouts.app2',
 
     /*
     |--------------------------------------------------------------------------
@@ -153,6 +153,6 @@ return [
     |
     */
 
-    'render_on_redirect' => false,
+    'render_on_redirect' => true,
 
 ];

@@ -21,7 +21,7 @@
                                 <ul class="dropdown-menu">
                                     @foreach($menus as $submenu)
                                         @if($submenu->parent_id==$menu->id)
-                                            <li><a class="nav-link" href="@if($submenu->path!='#') {{route($submenu->path)}} @else # @endif">{{$submenu->name}}</a></li>
+                                            <li><a class="nav-link" href="@if($submenu->path!='#') {{route($submenu->path)}} @else # @endif" data-turbolinks="true">{{$submenu->name}}</a></li>
                                         @endif
                                     @endforeach
                                 </ul>

@@ -10,15 +10,27 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@popperjs/core": "^2.11.6",
         "axios": "^0.21",
+        "bootstrap": "^4.3.1",
+        "bootstrap-icons": "^1.9.1",
+        "jquery-ui": "^1.13.2",
+        "laravel-echo": "^1.13.1",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "postcss": "^8.1.14",
+        "pusher-js": "^4.4.0",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.54.9",
+        "sass-loader": "^12.1.0"
     },
     "dependencies": {
         "chart": "^0.1.2",
-        "turbolinks": "^5.2.0",
         "chocolat": "^0.4.21",
-        "cleave.js": "^1.4.7"
+        "cleave.js": "^1.4.7",
+        "moment": "^2.29.4",
+        "nicescroll": "^3.7.4",
+        "poppers": "^0.1.2",
+        "turbolinks": "^5.2.0"
     }
 }

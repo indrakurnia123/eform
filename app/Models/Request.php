@@ -12,6 +12,7 @@ use App\Models\District;
 use App\Models\Subdistrict;
 use App\Models\NasabahStatus;
 use App\Models\CijData;
+use App\Models\User;
 
 class Request extends Model
 {
@@ -57,5 +58,10 @@ class Request extends Model
     public function cijdata()
     {
         return $this->belongsTo(CijData::class);
+    }
+    
+    public function office()
+    {
+        return $this->belongsTo(Office::class);
     }
 }

@@ -23,7 +23,22 @@ class Dashboard extends Component
     public $sumdata_rejects;
     public $sumdata_acc;
     public $subtitle;
-    public $month;
+    public $month;  
+
+
+    // public function getListeners()
+    // {
+    //     return [
+    //         "echo:request,RequestCreated" => 'createdRequest',
+    //     ];
+    // }
+
+    protected $listeners = ['echo:request-channel,request-event' => 'createdRequest'];
+
+    public function createdRequest($event)
+    {
+        dd($event);
+    }
 
     public function mount()
     {
@@ -120,7 +135,7 @@ class Dashboard extends Component
             ->get();
         }
     }
-
+    
     public function render()
     {
         return view('livewire.auth.dashboard')->extends('layouts.app2');

@@ -9,9 +9,24 @@ class RequestCard extends Component
 {
     public $request;
 
-    public function mount($id)
+    public $listeners=[
+        'selectedFilter'=>'filterSelected',
+        'updatedRequest'=>'$refresh'
+    ];
+
+    public function filterSelected($request)
     {
-        $this->request=Req::where('id','=',$id)->first();
+
+    }
+    
+    public function showEditModal()
+    {
+        $this->dispatchBrowserEvent('edit-request-modal');
+    }
+
+    public function mount($request)
+    {
+        $this->request=$request;
     }
 
     public function render()

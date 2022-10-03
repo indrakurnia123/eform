@@ -1,11 +1,12 @@
-@section('title','eForm | Dashboard')
 <div>
+    @section('title','eForm | Dashboard')
     @section('section-header','Dashboard')
     <div class="row">
         <livewire:auth.statistics.card :title="$card_title" :data="$request_stats" :subtitle="$subtitle" :sumdata="$sumdatas" :month="$month->name">
         <livewire:auth.statistics.card :title="$card_title_reject" :data="$request_reject" :subtitle="$subtitle" :sumdata="$sumdata_rejects" :month="$month->name">
         <livewire:auth.statistics.card :title="$card_title_acc" :data="$request_acc" :subtitle="$subtitle" :sumdata="$sumdata_acc" :month="$month->name">
     </div>
+    <div id="request-created"></div>
     <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">

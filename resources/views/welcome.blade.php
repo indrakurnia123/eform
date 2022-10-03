@@ -129,4 +129,14 @@
             </div>
         </div>
     </body>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript">
+        console.log("Echo");
+        let channel = Echo.channel('request-channel')
+        console.log(channel);
+        channel.listen('request-event',function(data){
+            console.log(data);
+            alert(data);
+        });
+    </script>
 </html>

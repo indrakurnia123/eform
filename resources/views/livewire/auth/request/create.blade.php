@@ -1,10 +1,10 @@
-@section('title','eform| Register')
-@push('css_libraries')
-<link rel="stylesheet" href="{{asset('stisla/modules/summernote/dist/summernote-bs4.css')}}">
-<link rel="stylesheet" href="{{asset('stisla/modules/selectric/public/selectric.css')}}">
-<script type="text/javascript" src="{{asset('js/webcam/webcam.min.js')}}"></script>
-@endpush
 <div>
+    @section('title','eform| Register')
+    @push('css_libraries')
+    <link rel="stylesheet" href="{{asset('stisla/modules/summernote/dist/summernote-bs4.css')}}">
+    <link rel="stylesheet" href="{{asset('stisla/modules/selectric/public/selectric.css')}}">
+    <script type="text/javascript" src="{{asset('js/webcam/webcam.min.js')}}"></script>
+    @endpush
     @section('section-header','Request')
     <div class="section-body">
         <form wire:submit.prevent="store">

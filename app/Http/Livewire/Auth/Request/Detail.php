@@ -20,6 +20,6 @@ class Detail extends Component
 
     public function render()
     {
-        return view('livewire.auth.request-detail')->extends('layouts.app2');
+        return view('livewire.auth.request.detail')->extends('layouts.app2');
     }
 }

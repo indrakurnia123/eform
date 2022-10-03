@@ -1,47 +1,8 @@
-@section('title','eform| Detail')
-@push('css_libraries')
-<link rel="stylesheet" href="{{asset('stisla/modules/chocolat/dist/css/chocolat.css')}}">
-<style>
-    .max-height-500{
-        max-height: 500px;
-        overflow-y: scroll;
-    }
-    ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-    }
-    ::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0px;
-    }
-    ::-webkit-scrollbar-thumb {
-    background: #ababab;
-    border: 0px none #ffffff;
-    border-radius: 50px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
-    }
-    ::-webkit-scrollbar-thumb:active {
-    background: #000000;
-    }
-    ::-webkit-scrollbar-track {
-    background: #fcfcfc;
-    border: 0px none #ffffff;
-    border-radius: 50px;
-    }
-    ::-webkit-scrollbar-track:hover {
-    background: #666666;
-    }
-    ::-webkit-scrollbar-track:active {
-    background: #333333;
-    }
-    ::-webkit-scrollbar-corner {
-    background: transparent;
-    }   
-</style>
-@endpush
 <div>
+    @section('title','eform| Detail')
+    @push('css_libraries')
+    <link rel="stylesheet" href="{{asset('stisla/modules/chocolat/dist/css/chocolat.css')}}">
+    @endpush
     @section('section-header','Detail')
     <div class="section-body">
         <h2 class="section-title">Data Pemohon</h2>
@@ -161,13 +122,11 @@
             </div>
         </div>
     </div>
-    <livewire:auth.request.data-cij :datas='$datas'>
+    <livewire:auth.request.detail.data-cij :datas='$datas'>
+    <livewire:auth.request.detail.vici-score :datas='$datas'>
 </div>
 </div>
-</div>
-@push('js_libraries')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-@endpush
 @push('page_specific_js')
     <script src="{{asset('stisla/modules/chocolat/dist/js/jquery.chocolat.min.js')}}"></script>
 @endpush
+</div>

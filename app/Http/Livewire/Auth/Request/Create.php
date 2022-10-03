@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Auth\Request;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use App\Events\RequestCreated;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\ImageRepository;
 use App\Models\Request as Req;
@@ -157,7 +158,8 @@ class Create extends Component
         ]);
         if($req){
             session()->flash('success','Registrasi Berhasil!');
-            return redirect()->route('auth.request.add');
+            return redirect()->route('requests.create');
+            event(new RequestCreated($req));
         }else{
             session()->flash('error','Request Gagal!');
             return redirect()->back()->withInput(Input::all());
